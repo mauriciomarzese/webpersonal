@@ -129,7 +129,7 @@ header.top{position:sticky;top:0;z-index:40;background:var(--blue);color:#fff;bo
 .portrait::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 22px,rgba(255,255,255,.3) 22px 34px)}
 .portrait span{position:relative;font-weight:800;font-size:4.6rem;letter-spacing:-.04em;color:var(--ink);background:#fff;padding:2px 26px;border-radius:20px}
 .portrait em{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);z-index:1;font-style:normal;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;background:var(--blue-deep);color:#fff;padding:11px 22px;border-radius:999px;white-space:nowrap}
-.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 75%}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 
 .about h2{margin-bottom:22px}
 .about p{color:var(--muted-ink)}
