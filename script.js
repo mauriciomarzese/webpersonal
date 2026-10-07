@@ -1,52 +1,101 @@
-  // Poné tu número con código de país, sin + ni espacios. Ej.: "549383XXXXXXX"
-  var WHATSAPP_NUMBER = "+5493834464529";
+// Poné tu número con código de país. Se limpian solos el "+", los espacios y los guiones.
+// Formato Argentina celular: 549 + código de área + número. Ej.: "5493834464529"
+var WHATSAPP_NUMBER = "5493834464529";
 
+(function () {
+  // Botones de WhatsApp
+  var num = String(WHATSAPP_NUMBER).replace(/\D/g, '');
   document.querySelectorAll('.wa').forEach(function (el) {
     var msg = encodeURIComponent(el.getAttribute('data-msg') || '');
-    var base = WHATSAPP_NUMBER ? 'https://wa.me/' + WHATSAPP_NUMBER : 'https://wa.me/';
+    var base = num ? 'https://wa.me/' + num : 'https://wa.me/';
     el.setAttribute('href', base + '?text=' + msg);
     el.setAttribute('target', '_blank');
     el.setAttribute('rel', 'noopener');
   });
+})();
 
-  // Carrusel con puntos
+// Menú acordeón (celular y tablet)
+(function () {
+  var toggle = document.getElementById('menuToggle');
+  var menu = document.getElementById('menu');
+  if (!toggle || !menu) return;
+  var mq = window.matchMedia('(max-width:1100px)');
+
+  function set(open) {
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+
+  toggle.addEventListener('click', function () { set(!menu.classList.contains('open')); });
+  menu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () { set(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('open')) { set(false); toggle.focus(); }
+  });
+  document.addEventListener('click', function (e) {
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !toggle.contains(e.target)) set(false);
+  });
+  function sync() { if (!mq.matches) menu.classList.remove('open'); set(menu.classList.contains('open')); }
+  if (mq.addEventListener) mq.addEventListener('change', sync); else mq.addListener(sync);
+  sync();
+})();
+
+// Carrusel con puntos
+(function () {
   var track = document.getElementById('track');
+  if (!track) return;
   var cards = track.querySelectorAll('.work');
   var dotsBox = document.getElementById('dots');
   var dots = [];
+
+  function posOf(c) { return c.offsetLeft - track.offsetLeft; }
   cards.forEach(function (c, i) {
     var b = document.createElement('button');
     b.type = 'button';
     b.setAttribute('aria-label', 'Ir al trabajo ' + (i + 1));
-    b.addEventListener('click', function () { track.scrollTo({ left: c.offsetLeft - track.offsetLeft, behavior: 'smooth' }); });
+    b.addEventListener('click', function () { track.scrollTo({ left: posOf(c), behavior: 'smooth' }); });
     dotsBox.appendChild(b); dots.push(b);
   });
   function current() {
     var best = 0, d = Infinity;
     cards.forEach(function (c, i) {
-      var diff = Math.abs((c.offsetLeft - track.offsetLeft) - track.scrollLeft);
+      var diff = Math.abs(posOf(c) - track.scrollLeft);
       if (diff < d) { d = diff; best = i; }
     });
     if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) best = cards.length - 1;
     return best;
   }
-  function paint() { var cur = current(); dots.forEach(function (b, i) { b.setAttribute('aria-current', i === cur ? 'true' : 'false'); }); }
+  function paint() {
+    var cur = current();
+    dots.forEach(function (b, i) { b.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+  }
   track.addEventListener('scroll', function () { window.requestAnimationFrame(paint); });
   function go(dir) {
     var cur = current(), next = cur + dir;
     if (next >= cards.length) next = 0;
     if (next < 0) next = cards.length - 1;
-    track.scrollTo({ left: cards[next].offsetLeft - track.offsetLeft, behavior: 'smooth' });
+    track.scrollTo({ left: posOf(cards[next]), behavior: 'smooth' });
   }
   document.getElementById('prev').addEventListener('click', function () { go(-1); });
   document.getElementById('next').addEventListener('click', function () { go(1); });
   paint();
 
+  // Autoplay: se pausa al tocar o pasar el mouse, y se retoma solo
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var paused = false;
-  ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { track.addEventListener(e, function () { paused = true; }); });
-  ['mouseleave', 'focusout'].forEach(function (e) { track.addEventListener(e, function () { paused = false; }); });
-  if (!reduce) { setInterval(function () { if (!paused && !document.hidden && !document.querySelector('.vid.playing')) go(1); }, 4500); }
+  var paused = false, resumeTimer;
+  function pause() { paused = true; clearTimeout(resumeTimer); }
+  function resume(ms) { clearTimeout(resumeTimer); resumeTimer = setTimeout(function () { paused = false; }, ms || 0); }
+  ['mouseenter', 'focusin', 'touchstart'].forEach(function (e) { track.addEventListener(e, pause, { passive: true }); });
+  ['mouseleave', 'focusout'].forEach(function (e) { track.addEventListener(e, function () { resume(0); }); });
+  ['touchend', 'touchcancel'].forEach(function (e) { track.addEventListener(e, function () { resume(6000); }, { passive: true }); });
+  if (!reduce) {
+    setInterval(function () {
+      if (!paused && !document.hidden && !document.querySelector('.vid.playing')) go(1);
+    }, 4500);
+  }
+})();
 
 // Videos: reproducir con botón, un solo video a la vez y botón de sonido
 (function () {
