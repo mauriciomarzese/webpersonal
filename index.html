@@ -34,24 +34,21 @@
 @media (max-width:900px){.plan.wide{grid-template-columns:1fr;gap:4px;padding:28px 22px}}
 @media (max-width:640px){.plans3{gap:20px;margin-top:32px}.plans3 .plan{padding:24px 20px}}
 
-/* Garantía y permanencia */
-.guar{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.guar-item{display:flex;gap:16px;align-items:flex-start;padding:24px;border-radius:20px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35)}
-.guar-ic{flex:none;width:46px;height:46px;border-radius:14px;background:var(--green);display:grid;place-items:center}
-.guar-ic svg{width:24px;height:24px;fill:none;stroke:var(--ink);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.guar h3{font-size:1.02rem;text-transform:uppercase;letter-spacing:.01em;margin-bottom:6px}
-.guar p{color:#EAF0FF;font-size:.95rem}
-.guar p b{color:var(--green)}
-@media (max-width:900px){.guar{grid-template-columns:1fr}}
-
 /* Preguntas frecuentes */
 .faq{max-width:760px;margin:44px auto 0;display:grid;gap:12px}
-.faq details{background:var(--blue-soft);border:1.5px solid var(--blue-line);border-radius:16px;padding:0 22px}
-.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq details{background:var(--blue-soft);border:1.5px solid var(--blue-line);border-radius:16px;padding:0 22px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+.faq details:hover{transform:translateY(-3px);border-color:var(--blue);box-shadow:0 12px 26px -12px rgba(46,91,255,.45);background:#fff}
+.faq details[open]{background:#fff;border-color:var(--blue)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s ease}
+.faq summary:hover{color:var(--blue-deep)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--blue-deep);flex:none}
-.faq details[open] summary::after{content:"\2212"}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;line-height:1;color:var(--blue-deep);background:var(--blue-line);transition:transform .35s cubic-bezier(.4,0,.2,1),background .25s ease,color .25s ease}
+.faq summary:hover::after{background:var(--blue);color:#fff}
+.faq details[open] summary::after{transform:rotate(135deg);background:var(--blue);color:#fff}
 .faq details p{padding:0 0 18px;color:var(--muted-ink);font-size:.97rem}
+.faq details[open] p{animation:faqin .4s ease both}
+@keyframes faqin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.faq details,.faq summary::after{transition:none}.faq details[open] p{animation:none}.faq details:hover{transform:none}}
 
 /* Logos en movimiento */
 .logos{overflow:hidden;margin-top:6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
@@ -200,24 +197,6 @@
 
     <p class="srv-note">Cada plan incluye lo del anterior. Los precios los vemos en una llamada corta. La inversión en anuncios se paga aparte, con un mínimo de $200.000 por mes.<br>¿Ya grabaste y solo necesitás la edición? <a class="wa" data-msg="Hola Mauricio, ya tengo el material grabado y quiero consultar por la edición.">Consultame</a>.</p>
 
-    <!-- Garantía y permanencia: ajustá la redacción a las condiciones reales -->
-    <div class="guar">
-      <div class="guar-item">
-        <div class="guar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div>
-        <div>
-          <h3>Recomendado: 3 meses</h3>
-          <p>Es el tiempo que hace falta para probar, mejorar y ver resultados. No es obligatorio, es una recomendación.</p>
-        </div>
-      </div>
-      <div class="guar-item">
-        <div class="guar-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <div>
-          <h3>Garantía</h3>
-          <p>Si después del tercer mes no llegaron consultas a tu negocio, <b>el cuarto mes es gratis.</b></p>
-        </div>
-      </div>
-    </div>
-
     <article class="plan star wide" id="paginas-web">
       <div>
         <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/></svg></div>
@@ -348,32 +327,32 @@
     <div class="faq">
       <details>
         <summary>No me siento cómodo frente a cámara, ¿igual sirve?</summary>
-        <p>Sí. Antes de grabar definimos qué decir y yo te voy guiando. Lo mejor es que salga alguien de tu negocio, porque eso da confianza. Si vos no querés, puede salir otra persona de tu equipo. Y si no se puede, podemos usar actores y sumarlo al presupuesto.</p>
+        <p>¡Sí, y es más común de lo que pensás! Antes de grabar definimos qué decir, y yo te guío en cada toma. Lo ideal es que salga alguien de tu negocio, porque eso genera confianza. Si vos no querés, puede salir alguien de tu equipo. Y si ninguno puede, sumamos un actor y lo incluimos en el presupuesto.</p>
       </details>
       <details>
         <summary>¿Cuánto cuesta?</summary>
-        <p>Depende del servicio y de tu negocio. Lo hablamos en una llamada corta y te paso una propuesta clara. Lo que invertís en anuncios se paga aparte.</p>
+        <p>Depende del servicio y de tu negocio, y por eso no hay un precio único. Hablamos en una llamada corta y te paso una propuesta clara, sin sorpresas. Lo que invertís en anuncios se paga aparte.</p>
       </details>
       <details>
         <summary>¿Tengo que quedarme un mínimo de meses?</summary>
-        <p>No es obligatorio, pero te recomiendo 3 meses. Es lo que hace falta para probar, mejorar y ver resultados. Además, es el plazo de la garantía.</p>
+        <p>No, nadie te obliga. Pero te recomiendo 3 meses: es el tiempo justo para probar, mejorar y empezar a ver resultados. Y es también el plazo de la garantía.</p>
       </details>
       <!-- Condiciones de la garantía: son una propuesta, ajustalas a lo que realmente vas a sostener -->
       <details>
         <summary>¿Cómo funciona la garantía?</summary>
-        <p>Trabajamos 3 meses. Si después del tercer mes no llegaron consultas a tu negocio, el cuarto mes del servicio es gratis. Vale si se cumple el plan: me pasás el material a tiempo, mantenés la inversión mínima en anuncios y respondés las consultas. Lo que gastás en anuncios no entra en el mes gratis. Aplica a los servicios mensuales.</p>
+        <p>Es simple: trabajamos 3 meses y, si en ese tiempo no llegaron consultas a tu negocio, el cuarto mes del servicio va por mi cuenta. Para que valga, tenés que pasarme el material a tiempo, mantener la inversión mínima en anuncios y responder las consultas que lleguen. Lo que gastás en anuncios no entra en el mes gratis. Aplica a los servicios mensuales.</p>
       </details>
       <details>
         <summary>¿Qué tengo que hacer yo?</summary>
-        <p>Depende del servicio. En el Sistema completo, dedicar un día al mes a grabar. En Contenido + Anuncios, grabar con tu celular y mandarme los videos. En Gestión de anuncios, pasarme tu material y los accesos. En Páginas web, contarme de tu negocio y pasarme el logo y las fotos. En todos, responder las consultas que te lleguen.</p>
+        <p>Muy poco, y te lo explico según el servicio. Sistema completo: un día al mes para grabar. Contenido + Anuncios: grabar con tu celular y mandarme los videos. Gestión de anuncios: pasarme tu material y los accesos. Páginas web: contarme de tu negocio y pasarme logo y fotos. En todos: responder las consultas que te lleguen.</p>
       </details>
       <details>
         <summary>¿Cuándo voy a ver resultados?</summary>
-        <p>Depende del rubro, del material y de lo que inviertas en anuncios. Cada mes te paso un informe para que veas qué funciona y qué mejoramos. Por eso recomiendo 3 meses.</p>
+        <p>Depende del rubro, del material y de lo que inviertas en anuncios. Lo que sí te aseguro: cada mes te paso un informe claro para que veas qué funciona y qué mejoramos. Por eso recomiendo arrancar con 3 meses.</p>
       </details>
       <details>
         <summary>¿Trabajás fuera de Catamarca?</summary>
-        <p>Sí. Solo el Sistema completo es en persona, y únicamente en San Fernando del Valle de Catamarca, Valle Viejo y Fray Mamerto Esquiú. Todo lo demás se hace a distancia, para todo el país.</p>
+        <p>¡Sí! Todo se hace a distancia, para todo el país. La única excepción es el Sistema completo: ahí voy a grabar a tu negocio, y por ahora solo en San Fernando del Valle de Catamarca, Valle Viejo y Fray Mamerto Esquiú.</p>
       </details>
     </div>
   </div>
@@ -408,5 +387,30 @@
 <a class="fab wa" data-msg="Hola Mauricio, vi tu página y quiero consultarte por tus servicios de contenido." aria-label="Escribime por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a>
 
 <script src="script.js"></script>
+<script>
+/* FAQ: apertura y cierre animados */
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.faq details').forEach(function(d){
+    var sm=d.querySelector('summary'),anim=null;
+    sm.addEventListener('click',function(e){
+      if(reduce)return;
+      e.preventDefault();
+      if(anim)anim.cancel();
+      var start=d.offsetHeight,opening=!d.open;
+      d.style.overflow='hidden';
+      if(opening)d.open=true;
+      var end=opening?d.offsetHeight:sm.offsetHeight+2;
+      if(!opening){d.style.height=start+'px'}
+      anim=d.animate({height:[start+'px',end+'px']},{duration:380,easing:'cubic-bezier(.4,0,.2,1)'});
+      anim.onfinish=function(){
+        if(!opening)d.open=false;
+        d.style.height=d.style.overflow='';anim=null;
+      };
+      anim.oncancel=function(){d.style.height=d.style.overflow='';anim=null};
+    });
+  });
+})();
+</script>
 </body>
 </html>
