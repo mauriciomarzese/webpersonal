@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#3D63F2">
+<meta name="theme-color" content="#2745C8">
 <title>Mauricio Marzese | Contenido que genera consultas para negocios que venden por WhatsApp</title>
-<meta name="description" content="Contenido que genera consultas para negocios que venden por WhatsApp. Vos grabás un solo día al mes y yo me encargo del resto. Presencial en Catamarca y remoto para todo el país.">
+<meta name="description" content="Hago que las redes de tu negocio trabajen para vos: contenido y anuncios que traen consultas por WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
 .inc .ck{flex:none;width:22px;height:22px;border-radius:50%;background:var(--green);display:grid;place-items:center;font-weight:800;font-size:.72rem;margin-top:1px}
 .plan-link{display:block;margin:-10px 0 18px;font-size:.88rem;font-weight:700;color:var(--blue-deep);text-underline-offset:3px}
 .note-line{margin-top:14px;font-size:.9rem;color:var(--muted-ink)}
-.srv-note{text-align:center;margin:30px auto 0;max-width:40em;font-size:.97rem;color:#E3EAFF}
+.srv-note{text-align:center;margin:30px auto 0;max-width:40em;font-size:.97rem;color:#E1E7F8}
 .srv-note a{color:var(--green);font-weight:700;text-underline-offset:4px}
 .plan.wide{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:30px;padding:36px}
 .plan.wide>div{min-width:0}
@@ -37,7 +37,7 @@
 /* Preguntas frecuentes */
 .faq{max-width:760px;margin:44px auto 0;display:grid;gap:12px}
 .faq details{background:var(--blue-soft);border:1.5px solid var(--blue-line);border-radius:16px;padding:0 22px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
-.faq details:hover{transform:translateY(-3px);border-color:var(--blue);box-shadow:0 12px 26px -12px rgba(46,91,255,.45);background:#fff}
+.faq details:hover{transform:translateY(-3px);border-color:var(--blue);box-shadow:0 12px 26px -12px rgba(27,51,160,.4);background:#fff}
 .faq details[open]{background:#fff;border-color:var(--blue)}
 .faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:color .2s ease}
 .faq summary:hover{color:var(--blue-deep)}
@@ -50,15 +50,6 @@
 @keyframes faqin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.faq details,.faq summary::after{transition:none}.faq details[open] p{animation:none}.faq details:hover{transform:none}}
 
-/* Logos en movimiento */
-.logos{overflow:hidden;margin-top:6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
-.logos-track{display:flex;gap:16px;width:max-content;animation:logos 40s linear infinite}
-.logos:hover .logos-track{animation-play-state:paused}
-.logo-item{flex:none;height:64px;min-width:150px;padding:10px 24px;border-radius:14px;background:#fff;display:grid;place-items:center}
-.logo-item img{max-height:42px;max-width:130px;object-fit:contain}
-.logo-item span{color:var(--ink);font-weight:700;font-size:.9rem;white-space:nowrap}
-@keyframes logos{to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.logos-track{animation:none}.logos{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
 </style>
 </head>
 <body>
@@ -91,20 +82,21 @@
 
 <!-- HERO (azul) -->
 <section class="hero s-blue">
+  <div class="fx" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap hero-grid" style="grid-template-columns:1fr">
     <div>
-      <span class="pill">Para negocios que venden por WhatsApp</span>
-      <h1>Contenido que genera <span class="hl">consultas</span> grabando un solo día al mes</h1>
-      <p class="sub">Vos grabás un día. Yo me ocupo de todo lo demás: qué publicar, editar los videos, subirlos y hacer los anuncios para que te escriban por WhatsApp.</p>
+      <span class="pill">¿Tu negocio no existe en redes?</span>
+      <h1>Subís contenido, pero tu negocio <span class="hl">sigue igual</span></h1>
+      <p class="sub">Muchos negocios publican y no lo notan en consultas ni en ventas. Hago que tus redes trabajen para tu negocio y que los clientes te escriban por WhatsApp.</p>
       <div class="actions">
         <a class="btn main wa" data-msg="Hola Mauricio, vi tu página y quiero que charlemos sobre mi contenido y mis anuncios."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Quiero que charlemos</a>
         <a class="btn ghost" href="#servicios">Ver servicios</a>
       </div>
-      <!-- Prueba social: logos en movimiento. Subí cada logo a /img/logos/ con el nombre indicado (ej: gulf.png). Mientras no esté el archivo, se muestra el nombre. -->
+      <!-- Logos en movimiento: subí lastanas.png, richard.png, mceventos.png, gulf.png, alfa.png e ici.png a /img/logos/ (mismo tamaño, cuadrados). -->
       <div class="zones" style="margin-top:38px">
         <h4>Marcas que crecen con nosotros.</h4>
         <div class="logos" role="group" aria-label="Marcas que trabajan conmigo">
-          <div class="logos-track"><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/richard-aberturas.png" alt="Richard Aberturas" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/alfa-muebles.png" alt="Alfa Muebles" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/las-tanas.png" alt="Las Tanas Denim" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/susana-medina.png" alt="Susana Medina" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/richard-aberturas.png" alt="Richard Aberturas" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/alfa-muebles.png" alt="Alfa Muebles" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/las-tanas.png" alt="Las Tanas Denim" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/susana-medina.png" alt="Susana Medina" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/richard-aberturas.png" alt="Richard Aberturas" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/alfa-muebles.png" alt="Alfa Muebles" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/las-tanas.png" alt="Las Tanas Denim" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/susana-medina.png" alt="Susana Medina" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/richard-aberturas.png" alt="Richard Aberturas" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/alfa-muebles.png" alt="Alfa Muebles" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/las-tanas.png" alt="Las Tanas Denim" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div><div class="logo-item"><img src="/img/logos/susana-medina.png" alt="Susana Medina" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:this.alt}))"></div></div>
+          <div class="logos-track"><div class="logo-item"><img src="/img/logos/lastanas.png" alt="Las Tanas Denim" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/richard.png" alt="Richard Aberturas" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/mceventos.png" alt="MC Eventos" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/alfa.png" alt="Alfa Muebles" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/lastanas.png" alt="Las Tanas Denim" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/richard.png" alt="Richard Aberturas" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/mceventos.png" alt="MC Eventos" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/alfa.png" alt="Alfa Muebles" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/lastanas.png" alt="Las Tanas Denim" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/richard.png" alt="Richard Aberturas" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/mceventos.png" alt="MC Eventos" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/alfa.png" alt="Alfa Muebles" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/lastanas.png" alt="Las Tanas Denim" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/richard.png" alt="Richard Aberturas" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/mceventos.png" alt="MC Eventos" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/gulf.png" alt="Gulf Catamarca" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/alfa.png" alt="Alfa Muebles" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div><div class="logo-item"><img src="/img/logos/ici.png" alt="ICI" loading="lazy" width="88" height="88" onerror="this.parentNode.classList.add('nologo')"></div></div>
         </div>
       </div>
     </div>
@@ -120,13 +112,13 @@
 </div>
     <div>
       <span class="pill">Sobre mí</span>
-      <h2>Hago el video y también el <span class="hl">anuncio</span> que lo lleva a más gente</h2>
-      <p>Soy Mauricio Marzese, Licenciado en Música Popular y especializado en marketing digital. Hace 5 años ayudo a negocios y marcas a vender por redes sociales.</p>
-      <p><strong>El trabajo empieza antes de grabar.</strong> Primero definimos qué decir y para qué, así cada video tiene un objetivo.</p>
+      <h2>Por qué creo que te puedo <span class="hl">ayudar</span></h2>
+      <p>Soy Mauricio Marzese y hace 5 años ayudo a negocios y marcas a vender por redes sociales.</p>
+      <p><strong>Como todo profesional, me equivoqué.</strong> Y aprendí de cada error. Hoy esa experiencia me sirve para que vos no tengas que repetirlos y no pierdas tiempo ni plata.</p>
       <ul class="pillars">
-        <li><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></div><div><strong>Primero el objetivo</strong><span>Cada video tiene un para qué.</span></div></li>
-        <li><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg></div><div><strong>Videos que se ven bien</strong><span>Cuidados para que se miren hasta el final.</span></div></li>
-        <li><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3.5-4 3 2.5L19 8"/></svg></div><div><strong>Decisiones con datos</strong><span>Miramos qué funcionó y mejoramos lo que sigue.</span></div></li>
+        <li><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg></div><div><strong>Aprendí de mis errores</strong><span>Sé qué evitar para que no pierdas tiempo ni plata.</span></div></li>
+        <li><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z"/></svg></div><div><strong>Empiezo por tu negocio</strong><span>Primero entiendo qué vendés y a quién, después pienso el contenido.</span></div></li>
+        <li><div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3.5-4 3 2.5L19 8"/></svg></div><div><strong>Miro los números</strong><span>Veo qué funciona y mejoro lo que sigue.</span></div></li>
       </ul>
     </div>
   </div>
@@ -134,6 +126,7 @@
 
 <!-- SERVICIOS + CÓMO TRABAJO (azul) -->
 <section class="s-blue" id="servicios">
+  <div class="fx" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div class="center-head">
       <span class="pill">Servicios</span>
@@ -145,14 +138,13 @@
 
       <article class="plan">
         <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3.5-4 3 2.5L19 8"/></svg></div>
-        <div class="mod">A distancia · todo el país</div>
-        <h3>Gestión de anuncios</h3>
+        <h3>Gestión de anuncios en Meta Ads</h3>
         <span class="lbl">Para quién es</span>
-        <p class="fit">Negocios que ya tienen videos o fotos y quieren que más gente los vea y les escriba.</p>
+        <p class="fit">Negocios que ya tienen contenido subido y quieren obtener más consultas y ventas con anuncios en Meta Ads.</p>
         <span class="lbl">Qué incluye</span>
         <ul class="inc">
           <li><span class="ck">✓</span>Revisión de tu cuenta</li>
-          <li><span class="ck">✓</span>Armado de los anuncios</li>
+          <li><span class="ck">✓</span>Armado de los anuncios en Meta Ads</li>
           <li><span class="ck">✓</span>Mejoras todos los meses</li>
           <li><span class="ck">✓</span>Informe mensual con las consultas y lo que cuesta cada una</li>
         </ul>
@@ -161,7 +153,6 @@
 
       <article class="plan">
         <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7z"/></svg></div>
-        <div class="mod">A distancia · todo el país</div>
         <h3>Contenido + Anuncios</h3>
         <span class="lbl">Para quién es</span>
         <p class="fit">Negocios que pueden grabarse con el celular, pero no tienen tiempo ni saben qué publicar.</p>
@@ -185,8 +176,8 @@
         <span class="lbl">Qué incluye</span>
         <ul class="inc">
           <li><span class="ck">✓</span>Todo lo de Contenido + Anuncios</li>
-          <li><span class="ck">✓</span>Un día al mes voy y grabo en tu negocio</li>
-          <li><span class="ck">✓</span>Reels y diseños listos y publicados</li>
+          <li><span class="ck">✓</span>Una jornada de grabación en tu negocio</li>
+          <li><span class="ck">✓</span>Reels y diseños listos y publicados en tus redes sociales</li>
           <li><span class="ck">✓</span>Informe con consultas, costos y ventas</li>
         </ul>
         <a class="plan-link" href="#testimonios">Ver casos de clientes con este plan →</a>
@@ -200,7 +191,6 @@
     <article class="plan star wide" id="paginas-web">
       <div>
         <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/></svg></div>
-        <div class="mod">A distancia · todo el país</div>
         <h3>Páginas web</h3>
         <span class="lbl">Para quién es</span>
         <p class="fit">Negocios y profesionales que necesitan una página para mostrarse y recibir mensajes.</p>
@@ -221,7 +211,6 @@
     <article class="plan star wide" id="mentoria">
       <div>
         <div class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M8.5 11h7M8.5 14h4"/></svg></div>
-        <div class="mod">A distancia · todo el país</div>
         <h3>Mentoría 1 a 1</h3>
         <span class="lbl">Para quién es</span>
         <p class="fit">Dueños de negocio y creadores que quieren manejar su contenido solos, pero con una guía.</p>
@@ -266,12 +255,12 @@
     <div class="track" id="track" tabindex="0" aria-label="Carrusel de trabajos realizados">
       <article class="work"><div class="reel vid" style="--a:115deg"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/alfamuebles.mp4"></video><i></i></div><div class="txt"><h3>Alfa Muebles</h3><p>Muebles a medida</p></div></article>
       <article class="work"><div class="reel vid" style="--a:115deg"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/richardaberturas.mp4"></video><i></i></div><div class="txt"><h3>Richard Aberturas</h3><p>Aberturas de aluminio</p></div></article>
-      <article class="work"><div class="reel vid" style="--a:75deg;--c1:#C9F7B0;--c2:#9DB6FF"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/elvergel.mp4"></video><i></i></div><div class="txt"><h3>Salón de eventos</h3><p>Reel para anuncios</p></div></article>
+      <article class="work"><div class="reel vid" style="--a:75deg;--c1:#C2E1B3;--c2:#A9B9E8"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/elvergel.mp4"></video><i></i></div><div class="txt"><h3>Salón de eventos</h3><p>Reel para anuncios</p></div></article>
       <article class="work"><div class="reel vid" style="--a:145deg"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/gulf.mp4"></video><i></i></div><div class="txt"><h3>Gulf Catamarca</h3><p>Distribuidor oficial de aceites Gulf</p></div></article>
-      <article class="work"><div class="reel vid" style="--a:95deg;--c1:#C9F7B0;--c2:#9DB6FF"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/ici.mp4"></video><i></i></div><div class="txt"><h3>ICI</h3><p>Instituto de Cardiología Intervencionista</p></div></article>
+      <article class="work"><div class="reel vid" style="--a:95deg;--c1:#C2E1B3;--c2:#A9B9E8"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/ici.mp4"></video><i></i></div><div class="txt"><h3>ICI</h3><p>Instituto de Cardiología Intervencionista</p></div></article>
       <article class="work"><div class="reel vid" style="--a:130deg"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/mceventos.mp4"></video><i></i></div><div class="txt"><h3>MC Eventos</h3><p>Reel para anuncios de Catering</p></div></article>
-      <article class="work"><div class="reel vid" style="--a:60deg;--c1:#C9F7B0;--c2:#9DB6FF"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/susanamedina.mp4"></video><i></i></div><div class="txt"><h3>Susana Medina</h3><p>Marca personal de Psicología</p></div></article>
-      <article class="work"><div class="reel vid" style="--a:60deg;--c1:#C9F7B0;--c2:#9DB6FF"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/mauricio.mp4"></video><i></i></div><div class="txt"><h3>Mauricio Marzese</h3><p>Marca personal de Marketing</p></div></article>
+      <article class="work"><div class="reel vid" style="--a:60deg;--c1:#C2E1B3;--c2:#A9B9E8"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/susanamedina.mp4"></video><i></i></div><div class="txt"><h3>Susana Medina</h3><p>Marca personal de Psicología</p></div></article>
+      <article class="work"><div class="reel vid" style="--a:60deg;--c1:#C2E1B3;--c2:#A9B9E8"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/mauricio.mp4"></video><i></i></div><div class="txt"><h3>Mauricio Marzese</h3><p>Marca personal de Marketing</p></div></article>
 
     </div>
     <div class="carousel-ctrl">
@@ -285,6 +274,7 @@
 <!-- TESTIMONIOS (azul) -->
 
 <section class="testi s-blue" id="testimonios">
+  <div class="fx" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
     <div class="center-head">
       <span class="pill">Testimonios</span>
@@ -302,7 +292,7 @@
 
       <article class="tcard">
         <div class="tbar"><i></i><i></i><i></i><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10.5l5-3v9l-5-3z"/></svg>Video de cliente</span></div>
-        <div class="reel vid" style="--a:75deg;--c1:#C9F7B0;--c2:#9DB6FF"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/testimonio2.mp4"></video><i></i></div>
+        <div class="reel vid" style="--a:75deg;--c1:#C2E1B3;--c2:#A9B9E8"><video playsinline preload="metadata" src="https://pub-e6f4e17918ef448c8ba25f899fc7a7e4.r2.dev/testimonio2.mp4"></video><i></i></div>
         <div class="tmetric">Estrategia-Edición-Publicación</div>
         <div class="tperson"><div class="avatar"><b>NA</b></div><div><strong>Marc Montserrat</strong><span>Espiritualidad - España</span></div></div>
       </article>
@@ -360,18 +350,11 @@
 
 <!-- CTA FINAL (azul) -->
 <section class="final s-blue">
+  <div class="fx" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="wrap">
-    <span class="pill">Hablemos</span>
-    <h2>¿No sabés cuál <span class="hl">elegir</span>?</h2>
-    <p style="color:#E3EAFF">Contame de tu negocio y qué querés lograr. <br>Te digo cuál te conviene y por dónde empezar.</p>
+    <h2>¿No sabés qué <span class="hl">plan elegir</span>?</h2>
+    <p style="color:#E1E7F8">Contame de tu negocio y qué querés lograr. <br>Te digo cuál te conviene y por dónde empezar.</p>
     <a class="btn main wa" data-msg="Hola Mauricio, vi tu página pero no sé cuál de tus servicios me conviene. ¿Podemos charlar?"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Quiero que me ayudes a elegir</a>
-    <article class="plan star" style="max-width:560px;margin:48px auto 0;text-align:left;color:var(--ink)">
-      <span class="badge">Gratis</span>
-      <div class="mod">Para empezar</div>
-      <h3>Auditoría gratis de tu Instagram</h3>
-      <p>Miro tu perfil de Instagram y te digo qué mejorar primero. Escribime por WhatsApp con tu usuario y te la mando.</p>
-      <a class="btn green block wa" style="margin-top:22px" data-msg="Hola Mauricio, quiero la auditoría gratuita de mi Instagram. Mi usuario es @">Quiero mi auditoría gratis</a>
-    </article>
   </div>
 </section>
 
