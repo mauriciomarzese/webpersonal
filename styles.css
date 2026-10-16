@@ -22,7 +22,7 @@ h1{font-size:clamp(2.1rem,7.2vw,4.4rem)}
 h2{font-size:clamp(1.7rem,5.6vw,3.1rem)}
 h3{font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
 .wrap{width:min(1120px,100% - 32px);margin-inline:auto}
-section{padding:96px 0}
+section{padding:48px 0 96px}
 :focus-visible{outline:3px solid #FFD84D;outline-offset:3px;border-radius:8px}
 
 /* Secciones alternadas */
@@ -127,12 +127,12 @@ header.top{position:sticky;top:0;z-index:40;background:var(--blue);color:#fff;bo
 .snd svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* Hero */
-.hero{padding:80px 0 96px;background:var(--blue) radial-gradient(60% 70% at 15% 30%,rgba(255,255,255,.16),transparent 70%)}
+.hero{padding:40px 0 96px;background:var(--blue) radial-gradient(60% 70% at 15% 30%,rgba(255,255,255,.16),transparent 70%)}
 .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
 .hero-grid>*{min-width:0}
 .hero .sub{margin-top:24px;font-size:1.2rem}
 .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
-@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.phone{width:min(270px,72%)}section{padding:72px 0}.hero{padding:56px 0 72px}}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;gap:40px}.phone{width:min(270px,72%)}section{padding:36px 0 72px}.hero{padding:28px 0 72px}}
 
 /* Sobre mí */
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
@@ -286,8 +286,8 @@ footer a:hover{text-decoration:underline}
 /* Celular */
 @media (max-width:640px){
   body{font-size:16px}
-  section{padding:56px 0}
-  .hero{padding:40px 0 60px}
+  section{padding:28px 0 56px}
+  .hero{padding:20px 0 60px}
   .hero .sub{font-size:1.05rem;margin-top:18px}
   .sub{font-size:1.02rem}
   .actions{flex-direction:column;align-items:stretch;gap:12px;margin-top:26px}
@@ -337,10 +337,10 @@ footer a:hover{text-decoration:underline}
 .logos{overflow:hidden;margin-top:6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
 .logos-track{display:flex;gap:26px;width:max-content;animation:logos 36s linear infinite}
 .logos:hover .logos-track{animation-play-state:paused}
-.logo-item{flex:none;width:130px;height:130px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 8px 20px -10px rgba(10,20,80,.5)}
-.logo-item img{width:100%;height:100%;object-fit:cover;display:block}
+.logo-item{flex:none;width:130px;height:130px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden;padding:22px;box-sizing:border-box;box-shadow:0 8px 20px -10px rgba(10,20,80,.5)}
+.logo-item img{width:100%;height:100%;object-fit:contain;display:block}
 .logo-item.nologo{background:rgba(255,255,255,.18);border:1.5px dashed rgba(255,255,255,.5)}
 .logo-item.nologo img{display:none}
 @keyframes logos{to{transform:translateX(-50%)}}
-@media (max-width:640px){.logo-item{width:100px;height:100px}.logos-track{gap:18px}}
+@media (max-width:640px){.logo-item{width:100px;height:100px;padding:17px}.logos-track{gap:18px}}
 @media (prefers-reduced-motion:reduce){.logos-track{animation:none}.logos{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
