@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.w3.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mauriciomarzese.com/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://mauriciomarzese.com/publicidad-digital/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://mauriciomarzese.com/diseno-web/</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://mauriciomarzese.com/mentoria/</loc>
+    <lastmod>2026-11-03</lastmod>
   </url>
 </urlset>

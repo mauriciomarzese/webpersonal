@@ -413,3 +413,43 @@ footer a:hover{text-decoration:underline}
 .faq details[open] p{animation:faqin .4s ease both}
 @keyframes faqin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.faq details,.faq summary::after{transition:none}.faq details[open] p{animation:none}.faq details:hover{transform:none}}
+
+/* ===== Sitio con varias páginas ===== */
+.links a[aria-current="page"]{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.qcard{display:flex;flex-direction:column;gap:6px;padding:22px 22px 20px;border-radius:20px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.4);color:#fff;text-decoration:none;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.qcard:hover{transform:translateY(-3px);background:rgba(255,255,255,.22);border-color:var(--green)}
+.qcard .qic{width:44px;height:44px;border-radius:12px;background:var(--green);display:grid;place-items:center;margin-bottom:8px}
+.qcard .qic svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.qcard strong{font-size:1.1rem;font-weight:800;font-style:italic;text-transform:uppercase;letter-spacing:-.01em}
+.qcard span{font-size:.93rem;color:#E1E7F8;line-height:1.45}
+.qcard .qic{margin-bottom:8px}
+.qcard .go{margin-top:10px;font-weight:700;font-size:.9rem;color:var(--green)}
+@media (max-width:900px){.quick{grid-template-columns:1fr;gap:12px;margin-top:26px}}
+@media (hover:none){.qcard:hover{transform:none}}
+.price{margin:14px 0 4px}
+.price small{display:block;font-size:.74rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+.price b{display:block;font-size:2rem;font-weight:800;letter-spacing:-.02em;line-height:1.15;color:var(--ink)}
+.price b i{font-style:normal;font-size:.78rem;font-weight:700;letter-spacing:.08em;color:var(--muted-ink);margin-left:6px}
+.price b.q{font-size:1.6rem;font-style:italic}
+.plazo{align-self:flex-start;margin:8px 0 4px;padding:6px 12px;border-radius:999px;background:#fff;border:1px solid var(--blue-line);font-size:.8rem;font-weight:700;color:var(--blue-deep)}
+.plan.star .plazo{background:var(--blue-soft)}
+.info3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.info3>div{padding:22px;border-radius:18px;background:var(--blue-soft);border:1.5px solid var(--blue-line)}
+.info3 h3{font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:10px}
+.info3 ul{margin:0;padding-left:18px;color:var(--ink);font-size:.95rem;display:grid;gap:6px}
+@media (max-width:900px){.info3{grid-template-columns:1fr}}
+.cform{max-width:640px;margin:36px auto 0;background:#fff;color:var(--ink);border-radius:24px;padding:28px;display:grid;gap:8px;box-shadow:0 30px 60px -34px rgba(8,18,80,.7)}
+.cform .fl{display:block;margin-top:10px;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+.cform input[type=text],.cform textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--blue-line);border-radius:12px;padding:13px 14px}
+.cform input[type=text]:focus,.cform textarea:focus{outline:3px solid #FFD84D;outline-offset:2px;border-color:var(--blue-deep)}
+.cform textarea{resize:vertical}
+.opts{display:flex;flex-wrap:wrap;gap:10px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opts span{display:block;padding:10px 16px;border-radius:999px;border:1.5px solid var(--blue-line);background:#fff;font-weight:600;font-size:.92rem}
+.opts input:checked+span{background:var(--blue-deep);border-color:var(--blue-deep);color:#fff}
+.opts input:focus-visible+span{outline:3px solid #FFD84D;outline-offset:2px}
+.cform .btn{margin-top:18px;border:0}
+@media (max-width:640px){.cform{padding:22px 18px;border-radius:20px}}
+@media (prefers-reduced-motion:reduce){.qcard{transition:none}.qcard:hover{transform:none}}
