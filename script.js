@@ -149,3 +149,106 @@ var WHATSAPP_NUMBER = "5493834464529";
     snd.addEventListener('click', function () { video.muted = !video.muted; paint(it); });
   });
 })();
+
+/* Fondo animado: puntos y líneas que se conectan (secciones oscuras) */
+(function () {
+  var secs = document.querySelectorAll('.s-blue');
+  if (!secs.length || !window.requestAnimationFrame) return;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var RGB = '169,211,143';
+  secs.forEach(function (sec) {
+    var cv = document.createElement('canvas');
+    cv.className = 'net';
+    cv.setAttribute('aria-hidden', 'true');
+    var fx = sec.querySelector('.fx');
+    sec.insertBefore(cv, fx ? fx.nextSibling : sec.firstChild);
+    var ctx = cv.getContext('2d');
+    if (!ctx) return;
+    var w = 0, h = 0, pts = [], raf = 0, visible = false;
+    function size() {
+      var r = sec.getBoundingClientRect();
+      w = r.width; h = r.height;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var n = Math.round(Math.min(36, Math.max(10, (w * h) / 30000)));
+      if (w < 700) n = Math.round(n * 0.6);
+      while (pts.length < n) pts.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.16, vy: (Math.random() - 0.5) * 0.16 });
+      pts.length = n;
+      draw();
+    }
+    function step() {
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+      }
+    }
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      var L = w < 700 ? 110 : 150, i, j;
+      ctx.lineWidth = 1;
+      for (i = 0; i < pts.length; i++) {
+        for (j = i + 1; j < pts.length; j++) {
+          var dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.sqrt(dx * dx + dy * dy);
+          if (d < L) {
+            ctx.strokeStyle = 'rgba(' + RGB + ',' + ((1 - d / L) * 0.15).toFixed(3) + ')';
+            ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke();
+          }
+        }
+      }
+      ctx.fillStyle = 'rgba(' + RGB + ',.28)';
+      for (i = 0; i < pts.length; i++) {
+        ctx.beginPath(); ctx.arc(pts[i].x, pts[i].y, 1.4, 0, 6.2832); ctx.fill();
+      }
+    }
+    function loop() {
+      if (!visible) { raf = 0; return; }
+      step(); draw();
+      raf = requestAnimationFrame(loop);
+    }
+    size();
+    if (reduce) return;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        if (visible && !raf) raf = requestAnimationFrame(loop);
+      }).observe(sec);
+    } else { visible = true; raf = requestAnimationFrame(loop); }
+    var t;
+    window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(size, 200); });
+  });
+})();
+
+/* Pasos interactivos */
+(function () {
+  var flow = document.getElementById('flow');
+  if (!flow) return;
+  var items = [].slice.call(flow.querySelectorAll('.fs'));
+  function setProg(i) {
+    var last = items[i].querySelector('.fn'), first = items[0].querySelector('.fn');
+    var h = last.getBoundingClientRect().top - first.getBoundingClientRect().top;
+    flow.style.setProperty('--prog', Math.max(0, h) + 'px');
+  }
+  function open(i) {
+    items.forEach(function (li, k) {
+      li.classList.toggle('on', k === i);
+      li.classList.toggle('done', k < i);
+      li.querySelector('button').setAttribute('aria-expanded', k === i ? 'true' : 'false');
+    });
+    setProg(i);
+    setTimeout(function () { setProg(i); }, 650);
+  }
+  var canHover = window.matchMedia && matchMedia('(hover:hover)').matches;
+  items.forEach(function (li, i) {
+    var b = li.querySelector('button');
+    b.addEventListener('click', function () { open(i); });
+    if (canHover) b.addEventListener('mouseenter', function () { open(i); });
+  });
+  open(0);
+  window.addEventListener('resize', function () {
+    var k = items.findIndex(function (l) { return l.classList.contains('on'); });
+    setProg(k < 0 ? 0 : k);
+  });
+})();
