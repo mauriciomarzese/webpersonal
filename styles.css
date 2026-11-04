@@ -453,3 +453,5 @@ footer a:hover{text-decoration:underline}
 .cform .btn{margin-top:18px;border:0}
 @media (max-width:640px){.cform{padding:22px 18px;border-radius:20px}}
 @media (prefers-reduced-motion:reduce){.qcard{transition:none}.qcard:hover{transform:none}}
+/* Testimonios: 3 tarjetas en la misma fila en escritorio */
+@media (min-width:981px){.tgrid{grid-template-columns:repeat(3,1fr);max-width:none;margin-inline:0}}
