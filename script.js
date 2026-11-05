@@ -252,3 +252,11 @@ var WHATSAPP_NUMBER = "5493834464529";
     setProg(k < 0 ? 0 : k);
   });
 })();
+
+/* Menú: opacidad reducida al bajar */
+(function () {
+  var hd = document.querySelector('header.top');
+  if (!hd) return;
+  function f() { hd.classList.toggle('scrolled', (window.pageYOffset || document.documentElement.scrollTop) > 40); }
+  window.addEventListener('scroll', f, { passive: true }); f();
+})();

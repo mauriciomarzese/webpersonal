@@ -528,3 +528,19 @@ h2{font-size:clamp(1.7rem,5vw,2.8rem)}
 .fs button:hover .ft{color:#1E6B4A}
 @media (max-width:700px){.pasos{padding:60px 0}.ft{font-size:1.1rem}.fd{padding-left:64px}}
 @media (prefers-reduced-motion:reduce){.fd,.fd>p,.flow::after{transition:none}}
+
+/* Menú fijo: al bajar, baja un poco la opacidad */
+header.top{transition:background-color .5s ease,backdrop-filter .5s ease}
+header.top.scrolled{background:rgba(23,26,24,.84);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+
+/* ===== Portfolios ocultos ===== */
+.ph{padding:72px 0 64px}
+.ph .sub{max-width:62ch}
+.vgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:8px}
+.vgrid .work{flex:none;min-width:0;width:auto}
+.vgrid.v3{grid-template-columns:repeat(3,1fr);max-width:880px}
+.vtit{margin:56px 0 18px;font-size:1.4rem}
+.vnote{margin:0 0 22px;color:#5A5F5A}
+@media (max-width:980px){.vgrid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.vgrid,.vgrid.v3{grid-template-columns:repeat(2,1fr);gap:14px}.ph{padding:48px 0 44px}}
+@media (max-width:700px){.vgrid.v3 .work:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 7px);justify-self:center}}

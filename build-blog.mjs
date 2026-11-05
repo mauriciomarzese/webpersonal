@@ -4,6 +4,9 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+// Primero los recursos gratuitos (/recursos/); si fallan, el blog sigue igual.
+try { await import('./build-recursos.mjs'); } catch (e) { console.log('[recursos] Error, se omiten:', e.message); }
+
 const TOKEN = process.env.NOTION_TOKEN;
 const DB = (process.env.NOTION_BLOG_DB || '741195c4c9324acabb2591b83d006f57').replace(/-/g, '');
 const API = process.env.NOTION_API_BASE || 'https://api.notion.com';

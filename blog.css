@@ -46,3 +46,29 @@
 .post table{border-collapse:collapse;width:100%;font-size:.96rem}
 .post th,.post td{border:1px solid var(--blue-line);padding:10px 12px;text-align:left;vertical-align:top}
 .post th{background:var(--blue-soft)}
+
+/* ===== Recursos ===== */
+.rcard{min-height:100%}
+.rcard .rgo{margin-top:auto;padding-top:14px;font-weight:700;color:var(--blue-deep);font-size:.95rem}
+.rwrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:980px}
+.rinfo{display:flex;flex-direction:column;gap:16px}
+.rdesc{font-size:1.15rem;line-height:1.6;margin:0;color:var(--ink)}
+.back-l{display:inline-block;color:var(--blue-deep);font-weight:700;text-decoration:none;font-size:.95rem;transition:color .5s ease}
+.back-l:hover{text-decoration:underline}
+.rform{display:flex;flex-direction:column;gap:16px;padding:28px;border:1.5px solid var(--blue-line);border-radius:6px;background:var(--blue-soft)}
+.rform h2{font-size:1.4rem;margin:0}
+.rform label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:.92rem;color:var(--ink)}
+.rform input[type=text],.rform input[type=email]{font:inherit;padding:12px 14px;border:1.5px solid var(--blue-line);border-radius:4px;background:#fff;color:var(--ink);transition:border-color .4s ease}
+.rform input[type=text]:focus,.rform input[type=email]:focus{outline:none;border-color:var(--blue-deep)}
+.rform .chk{flex-direction:row;align-items:flex-start;gap:10px;font-weight:400;font-size:.88rem;line-height:1.45}
+.rform .chk input{margin-top:3px;flex:none}
+.rform .btn{align-self:flex-start}
+.rform .btn[disabled]{opacity:.6;cursor:default}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.rerr{margin:0;padding:10px 12px;border-radius:4px;background:#fff;border:1.5px solid #B3402E;color:#8A2D1F;font-size:.92rem}
+.gwrap{display:flex;flex-direction:column;align-items:flex-start;gap:20px;max-width:640px}
+.gtit{font-size:1.35rem;font-weight:700;margin:0;color:var(--ink)}
+.gnote{margin:0;color:var(--muted-ink);font-size:.92rem}
+.glist{margin:0;padding-left:20px;line-height:1.9}
+.glist a{color:var(--blue-deep);font-weight:600}
+@media (max-width:820px){.rwrap{grid-template-columns:1fr;gap:28px}}
