@@ -544,3 +544,41 @@ header.top.scrolled{background:rgba(23,26,24,.84);-webkit-backdrop-filter:blur(8
 @media (max-width:980px){.vgrid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:700px){.vgrid,.vgrid.v3{grid-template-columns:repeat(2,1fr);gap:14px}.ph{padding:48px 0 44px}}
 @media (max-width:700px){.vgrid.v3 .work:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 7px);justify-self:center}}
+
+/* ===== Home: hero con foto, Sobre mí, Servicios + terracota sutil ===== */
+:root{--terra:#C8643B}
+.hero-grid{grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.hero-ph{margin:0;position:relative;justify-self:center;width:min(380px,100%)}
+.hero-ph img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:6px;position:relative;z-index:1}
+.hero-ph::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1.5px solid var(--terra);opacity:.55;border-radius:6px}
+.pill::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--terra);margin-right:8px;vertical-align:middle;position:relative;top:-1px}
+.about{background:#F7F3EA;padding:96px 0}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.about-grid>*{min-width:0}
+.about-ph{margin:0;position:relative;justify-self:center;width:min(400px,100%)}
+.about-ph img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:6px;position:relative;z-index:1}
+.about-ph::before{content:"";position:absolute;inset:14px 14px -14px -14px;border:1.5px solid var(--terra);opacity:.5;border-radius:6px}
+.about-txt h2{margin:14px 0 18px}
+.about-txt p{margin:0 0 14px;max-width:54ch;color:#3A3F3A}
+.about-txt p:last-child{margin-bottom:0}
+.pasos.s-white{background:#F0EBDF}
+.pasos .fn{background:#F7F3EA}
+.serv.s-white{background:#F0EBDF;padding:96px 0}
+.serv .quick{margin-top:30px}
+.serv .qcard{background:#F7F3EA;border:1.5px solid #DDD5C2;color:var(--ink)}
+.serv .qcard:hover{background:#fff;border-color:var(--blue-deep)}
+.serv .qcard span{color:#5A5F5A}
+.serv .qcard .qic{background:var(--blue-deep)}
+.serv .qcard .qic svg{stroke:#fff}
+.serv .qcard .go{color:var(--blue-deep)}
+.serv .qcard .go{position:relative}
+.serv .qcard:hover .go{color:var(--terra)}
+.final.s-white{background:#F7F3EA}
+footer{border-top:1px solid rgba(200,100,59,.35)}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-ph{order:-1;width:min(240px,62%);justify-self:start}
+  .about{padding:64px 0}.about-grid{grid-template-columns:1fr;gap:36px}.about-ph{width:min(320px,86%);justify-self:start}
+  .serv.s-white{padding:64px 0}
+}
+.serv .qcard .go{margin-top:auto;padding-top:10px}.serv .qcard{height:100%}
