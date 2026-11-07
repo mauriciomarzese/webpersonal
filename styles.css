@@ -197,7 +197,7 @@ header.top{position:sticky;top:0;z-index:40;background:var(--blue);color:#fff;bo
 .plan .btn{margin-top:auto}
 @media (max-width:900px){.plans{grid-template-columns:1fr;margin-top:40px}}
 
-/* Mentoría */
+/* Consultoría */
 .men-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .men-grid>*{min-width:0}
 .men h2{margin-bottom:20px}
@@ -582,3 +582,8 @@ footer{border-top:1px solid rgba(200,100,59,.35)}
   .serv.s-white{padding:64px 0}
 }
 .serv .qcard .go{margin-top:auto;padding-top:10px}.serv .qcard{height:100%}
+.hero-brands{margin-top:56px}
+.hero-brands .zones h4{margin-top:0}
+.hero-grid{align-items:center}
+@media (max-width:900px){.hero-brands{margin-top:40px}}
+.hero-brands .zones h4{text-align:center;margin-bottom:18px}
