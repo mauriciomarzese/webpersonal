@@ -60,7 +60,7 @@ export default {
 // Formulario de calificación del Sistema RITMO.
 const OPCIONES = {
   ubicacion: ['Catamarca', 'Otra provincia'],
-  precio: ['Menos de $100.000', 'Entre $100.000 y $350.000', 'Más de $350.000'],
+  ganancia: ['Menos de $50.000', 'Entre $50.000 y $175.000', 'Más de $175.000'],
   sino: ['Sí', 'No'],
 };
 const json = (data, status = 200) => new Response(JSON.stringify(data), { status, headers: { 'Content-Type': 'application/json' } });
@@ -88,7 +88,7 @@ async function diagnostico(request, env) {
   if (tel) props.WhatsApp = { phone_number: tel };
   const sel = {
     'Ubicación': elegir(d.ubicacion, OPCIONES.ubicacion),
-    'Precio promedio': elegir(d.precio, OPCIONES.precio),
+    'Ganancia por venta': elegir(d.ganancia, OPCIONES.ganancia),
     'Presupuesto $700.000': elegir(d.presupuesto, OPCIONES.sino),
     'Aparece en videos': elegir(d.camara, OPCIONES.sino),
     'Atención WhatsApp': elegir(d.atencion, OPCIONES.sino),

@@ -91,10 +91,11 @@
         <div class="row"><button class="back" type="button" data-back>Volver</button></div>
       </div>
 
-      <div class="step" data-k="precio">
+      <div class="step" data-k="ganancia">
         <span class="num">Pregunta 3 de 6</span>
-        <h2>¿Cuál es el precio promedio de lo que vendés?</h2>
-        <div class="choices"><button type="button" data-v="Menos de $100.000" data-out>Menos de $100.000</button><button type="button" data-v="Entre $100.000 y $350.000" data-out>Entre $100.000 y $350.000</button><button type="button" data-v="Más de $350.000">Más de $350.000</button></div>
+        <h2>¿Cuál es la ganancia aproximada que te deja cada venta?</h2>
+        <p class="help">Lo que te queda después de descontar costos, no el precio de venta.</p>
+        <div class="choices"><button type="button" data-v="Menos de $50.000" data-out>Menos de $50.000</button><button type="button" data-v="Entre $50.000 y $175.000" data-out>Entre $50.000 y $175.000</button><button type="button" data-v="Más de $175.000">Más de $175.000</button></div>
         <div class="row"><button class="back" type="button" data-back>Volver</button></div>
       </div>
 
@@ -162,7 +163,7 @@
 (function(){
   var f=document.getElementById('quiz'); if(!f) return;
   var steps=[].slice.call(f.querySelectorAll('.step')), bar=document.getElementById('qbar');
-  var ans={}, hist=[0], total=7;
+  var ans={}, fuera={}, hist=[0], total=7;
   var q=new URLSearchParams(location.search), origen=['utm_source','utm_campaign','utm_content'].map(function(k){return q.get(k)}).filter(Boolean).join(' / ')||document.referrer||'Directo';
   function guardar(extra){
     var d=Object.assign({},ans,extra,{origen:origen});
@@ -190,7 +191,8 @@
     }
     if(b.hasAttribute('data-v')){
       ans[st.dataset.k]=b.dataset.v; start();
-      if(b.hasAttribute('data-out')){ hist.push(idx('no')); show(idx('no')); bar.style.width='100%'; guardar({resultado:'No califica'}); track('NoCalifica',true); return; }
+      if(b.hasAttribute('data-out')) fuera[st.dataset.k]=1; else delete fuera[st.dataset.k];
+      if(st.dataset.k==='atencion' && Object.keys(fuera).length){ hist.push(idx('no')); show(idx('no')); bar.style.width='100%'; guardar({resultado:'No califica'}); track('NoCalifica',true); return; }
       go(i+1);
     }
   });
@@ -199,7 +201,7 @@
     var st=steps[idx('datos')], n=f.elements.nombre.value.trim(), t=f.elements.tel.value.trim();
     if(n.length<2||t.replace(/\D/g,'').length<8){st.querySelector('.err').textContent='Completá tu nombre y un WhatsApp válido.';return;}
     var msg='Hola Mauricio, completé el formulario del Sistema RITMO y quiero agendar el diagnóstico gratis.'+
-      '\nNombre: '+n+'\nWhatsApp: '+t+'\nRubro: '+ans.rubro+'\nUbicación: '+ans.ubicacion+'\nPrecio promedio: '+ans.precio+
+      '\nNombre: '+n+'\nWhatsApp: '+t+'\nRubro: '+ans.rubro+'\nUbicación: '+ans.ubicacion+'\nGanancia por venta: '+ans.ganancia+
       '\nPresupuesto: '+ans.presupuesto+'\nAparece en videos: '+ans.camara+'\nAtención por WhatsApp: '+ans.atencion;
     var url='https://wa.me/'+String(WHATSAPP_NUMBER).replace(/\D/g,'')+'?text='+encodeURIComponent(msg);
     document.getElementById('qwa').href=url;
