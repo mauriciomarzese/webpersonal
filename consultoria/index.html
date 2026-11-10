@@ -95,6 +95,37 @@
   </div>
 </section>
 
+<section class="s-white" id="preguntas">
+  <div class="wrap">
+    <div class="center-head">
+      <span class="pill">Preguntas</span>
+      <h2>Lo que <span class="hl">suelen</span> preguntarme</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>¿Necesito saber de anuncios o de edición?</summary>
+        <p>No. Arrancamos desde cero: en la primera sesión configuramos juntos tu cuenta y lanzamos tu primer anuncio.</p>
+      </details>
+      <details>
+        <summary>¿Qué necesito para la primera sesión?</summary>
+        <p>Completar el workbook de tu negocio que te mando al confirmar, tener a mano el acceso a Facebook, Instagram y WhatsApp Business, y la tarjeta para pagar los anuncios.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tiempo le tengo que dedicar?</summary>
+        <p>La sesión semanal y las 3 tareas que te dejo después de cada una. Son tareas cortas y concretas, pensadas para que las hagas en la semana.</p>
+      </details>
+      <details>
+        <summary>¿Y si una semana no puedo?</summary>
+        <p>El pack tiene una validez de 5 semanas, así que tenés margen para mover una sesión.</p>
+      </details>
+      <details>
+        <summary>¿Cuál es la diferencia con el Sistema RITMO?</summary>
+        <p>En la consultoría lo hacés vos, con mi guía, y la inversión es mucho menor. En el Sistema RITMO me encargo yo de la edición, los anuncios y los reportes.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="final s-white">
   <div class="wrap">
     <h2>¿Querés saber si la <span class="hl">consultoría</span> es para vos?</h2>
@@ -115,6 +146,31 @@
 <a class="fab wa" data-msg="Hola Mauricio, vi tu página y me gustaría tener una charla previa para ver si podés ayudarme con mi negocio." aria-label="Escribime por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a>
 
 <script src="/script.js"></script>
+<script>
+/* FAQ: apertura y cierre animados */
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.faq details').forEach(function(d){
+    var sm=d.querySelector('summary'),anim=null;
+    sm.addEventListener('click',function(e){
+      if(reduce)return;
+      e.preventDefault();
+      if(anim)anim.cancel();
+      var start=d.offsetHeight,opening=!d.open;
+      d.style.overflow='hidden';
+      if(opening)d.open=true;
+      var end=opening?d.offsetHeight:sm.offsetHeight+2;
+      if(!opening){d.style.height=start+'px'}
+      anim=d.animate({height:[start+'px',end+'px']},{duration:380,easing:'cubic-bezier(.4,0,.2,1)'});
+      anim.onfinish=function(){
+        if(!opening)d.open=false;
+        d.style.height=d.style.overflow='';anim=null;
+      };
+      anim.oncancel=function(){d.style.height=d.style.overflow='';anim=null};
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
