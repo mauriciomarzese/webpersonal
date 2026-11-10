@@ -2,6 +2,19 @@
 // Formato Argentina celular: 549 + código de área + número. Ej.: "5493834464529"
 var WHATSAPP_NUMBER = "5493834464529";
 
+// Píxel de Meta (dataset "Mauricio Marzese"). Para cambiarlo, reemplazá el número.
+var META_PIXEL_ID = "1110218368419584";
+(function (f, b, e, v, n, t, s) {
+  if (!META_PIXEL_ID || f.fbq) return;
+  n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+  if (!f._fbq) f._fbq = n;
+  n.push = n; n.loaded = true; n.version = '2.0'; n.queue = [];
+  t = b.createElement(e); t.async = true; t.src = v;
+  s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+  fbq('init', META_PIXEL_ID);
+  fbq('track', 'PageView');
+})(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
 (function () {
   // Botones de WhatsApp
   var num = String(WHATSAPP_NUMBER).replace(/\D/g, '');

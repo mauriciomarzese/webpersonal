@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#171A18">
+<title>¿Tu negocio califica para el Sistema RITMO? | Mauricio Marzese</title>
+<meta name="description" content="Respondé 6 preguntas y averiguá si tu negocio califica para el Sistema RITMO: contenido y anuncios para recibir consultas por WhatsApp.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="canonical" href="https://mauriciomarzese.com/diagnostico/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Mauricio Marzese">
+<meta property="og:title" content="¿Tu negocio califica para el Sistema RITMO?">
+<meta property="og:description" content="Respondé 6 preguntas y averiguá si tu negocio califica.">
+<meta property="og:url" content="https://mauriciomarzese.com/diagnostico/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<meta name="robots" content="noindex">
+<style>
+.quiz{max-width:640px;margin:36px auto 0;background:#fff;color:var(--ink);padding:32px;border-radius:6px;box-shadow:0 30px 60px -34px rgba(0,0,0,.7)}
+.quiz .bar{height:6px;background:#E7E9E4;border-radius:3px;overflow:hidden;margin-bottom:26px}
+.quiz .bar i{display:block;height:100%;width:0;background:var(--blue-deep);transition:width .3s ease}
+.quiz .step{display:none}
+.quiz .step.on{display:block;animation:qin .3s ease}
+@keyframes qin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.quiz .num{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-deep)}
+.quiz h2{font-size:1.45rem;line-height:1.25;margin:8px 0 6px}
+.quiz .help{color:#5B635C;margin:0 0 16px;font-size:.95rem}
+.quiz .choices{display:grid;gap:10px;margin-top:18px}
+.quiz .choices button{font:inherit;font-weight:600;text-align:left;padding:15px 18px;background:#F6F3EC;border:1.5px solid #D9DDD6;border-radius:4px;cursor:pointer;color:var(--ink)}
+.quiz .choices button:hover,.quiz .choices button:focus-visible{border-color:var(--blue-deep);background:#EEF5EE;outline:none}
+.quiz input{width:100%;font:inherit;font-size:16px;margin-top:18px;padding:14px;border:1.5px solid #D9DDD6;border-radius:4px}
+.quiz input:focus{outline:3px solid #FFD84D;outline-offset:2px;border-color:var(--blue-deep)}
+.quiz .err{color:#B3261E;font-size:.9rem;min-height:1.2em;margin:8px 0 0}
+.quiz .row{display:flex;gap:12px;align-items:center;margin-top:18px}
+.quiz .back{background:none;border:0;font:inherit;color:#5B635C;cursor:pointer;text-decoration:underline;padding:6px}
+.quiz .btn{border:0}
+.quiz .end h2{font-size:1.6rem}
+.quiz .end p{color:#3E4540}
+@media (max-width:640px){.quiz{padding:24px 18px}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.2 1.6 6L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1-1.5-5.3C2.2 6.4 6.6 2 12 2c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.4 9.9-9.9 9.9Zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 0 1-4-3.5c-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.4-.4-.7-.4h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="/">Mauricio <b>Marzese</b></a>
+    <button class="menu-toggle" type="button" id="menuToggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    <div class="menu" id="menu">
+      <div class="menu-inner">
+        <ul class="links"><li><a href="/">Inicio</a></li><li><a href="/publicidad-digital/">Sistema RITMO</a></li><li><a href="/consultoria/">Consultoría</a></li><li><a href="/empresas/">Empresas</a></li><li><a href="/diseno-web/">Páginas web</a></li></ul>
+        <a class="btn green sm wa" data-msg="Hola Mauricio, vi tu página y me gustaría tener una charla previa para ver si podés ayudarme con mi negocio.">Quiero trabajar con vos</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="s-blue">
+  <div class="fx" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="center-head">
+      <span class="pill">Sistema RITMO</span>
+      <h1>¿Tu negocio <span class="hl">califica</span>?</h1>
+      <p class="sub">Contenido y anuncios para que tus clientes te escriban por WhatsApp. Respondé 6 preguntas y lo averiguamos en un minuto.</p>
+    </div>
+
+    <form class="quiz" id="quiz" novalidate>
+      <div class="bar" aria-hidden="true"><i id="qbar"></i></div>
+
+      <div class="step on" data-k="rubro">
+        <span class="num">Pregunta 1 de 6</span>
+        <h2>¿Qué vendés?</h2>
+        <input type="text" name="rubro" placeholder="Ej.: aberturas de aluminio, tratamientos de estética…" autocomplete="off">
+        <p class="err"></p>
+        <div class="row"><button class="btn main" type="button" data-next>Siguiente</button></div>
+      </div>
+
+      <div class="step" data-k="ubicacion">
+        <span class="num">Pregunta 2 de 6</span>
+        <h2>¿Dónde está tu negocio?</h2>
+        <div class="choices"><button type="button" data-v="Catamarca">Catamarca</button><button type="button" data-v="Otra provincia">Otra provincia</button></div>
+        <div class="row"><button class="back" type="button" data-back>Volver</button></div>
+      </div>
+
+      <div class="step" data-k="precio">
+        <span class="num">Pregunta 3 de 6</span>
+        <h2>¿Cuál es el precio promedio de lo que vendés?</h2>
+        <div class="choices"><button type="button" data-v="Menos de $100.000" data-out>Menos de $100.000</button><button type="button" data-v="Entre $100.000 y $350.000" data-out>Entre $100.000 y $350.000</button><button type="button" data-v="Más de $350.000">Más de $350.000</button></div>
+        <div class="row"><button class="back" type="button" data-back>Volver</button></div>
+      </div>
+
+      <div class="step" data-k="presupuesto">
+        <span class="num">Pregunta 4 de 6</span>
+        <h2>¿Contás con un presupuesto de al menos $700.000 mensuales para marketing, entre el servicio y los anuncios?</h2>
+        <div class="choices"><button type="button" data-v="Sí">Sí</button><button type="button" data-v="No" data-out>No</button></div>
+        <div class="row"><button class="back" type="button" data-back>Volver</button></div>
+      </div>
+
+      <div class="step" data-k="camara">
+        <span class="num">Pregunta 5 de 6</span>
+        <h2>¿Vos o alguien de tu equipo puede aparecer en los videos?</h2>
+        <div class="choices"><button type="button" data-v="Sí">Sí</button><button type="button" data-v="No" data-out>No</button></div>
+        <div class="row"><button class="back" type="button" data-back>Volver</button></div>
+      </div>
+
+      <div class="step" data-k="atencion">
+        <span class="num">Pregunta 6 de 6</span>
+        <h2>¿Tenés a alguien que responda las consultas de WhatsApp en el día?</h2>
+        <div class="choices"><button type="button" data-v="Sí">Sí</button><button type="button" data-v="No" data-out>No</button></div>
+        <div class="row"><button class="back" type="button" data-back>Volver</button></div>
+      </div>
+
+      <div class="step" data-k="datos">
+        <span class="num">Último paso</span>
+        <h2>¡Tu negocio califica!</h2>
+        <p class="help">Dejame tus datos y agendamos un diagnóstico gratis de 30 minutos.</p>
+        <input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name">
+        <input type="tel" name="tel" placeholder="Tu WhatsApp (ej.: 383 4123456)" autocomplete="tel" inputmode="tel">
+        <p class="err"></p>
+        <div class="row"><button class="btn main" type="submit">Quiero mi diagnóstico</button><button class="back" type="button" data-back>Volver</button></div>
+      </div>
+
+      <div class="step end" data-k="ok">
+        <span class="num">Listo</span>
+        <h2>Tu negocio tiene el perfil para el Sistema RITMO</h2>
+        <p>Si WhatsApp no se abrió solo, tocá el botón para enviarme tus respuestas y coordinamos el diagnóstico.</p>
+        <div class="row"><a class="btn main" id="qwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>Enviar por WhatsApp</a></div>
+      </div>
+
+      <div class="step end" data-k="no">
+        <span class="num">Gracias por responder</span>
+        <h2>Por ahora el Sistema RITMO no es lo que más te conviene</h2>
+        <p>Con estos números necesitarías demasiadas ventas para recuperar la inversión. Si querés aprender a hacerlo vos, con una inversión mucho menor, la consultoría personal es para vos.</p>
+        <div class="row"><a class="btn main" href="/consultoria/">Ver consultoría</a></div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Mauricio <b>Marzese</b> · Catamarca, Argentina</span>
+    <nav><a href="/">Inicio</a><a href="/publicidad-digital/">Sistema RITMO</a><a href="/consultoria/">Consultoría</a><a href="/empresas/">Empresas</a><a href="/diseno-web/">Páginas web</a></nav>
+  </div>
+</footer>
+
+<a class="fab wa" data-msg="Hola Mauricio, vi tu página y me gustaría tener una charla previa para ver si podés ayudarme con mi negocio." aria-label="Escribime por WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a>
+
+<script src="/script.js"></script>
+<script>
+(function(){
+  var f=document.getElementById('quiz'); if(!f) return;
+  var steps=[].slice.call(f.querySelectorAll('.step')), bar=document.getElementById('qbar');
+  var ans={}, hist=[0], total=7;
+  function track(ev,custom){ try{ if(window.fbq){ custom?fbq('trackCustom',ev):fbq('track',ev); } }catch(e){} }
+  function show(i){
+    steps.forEach(function(s,j){s.classList.toggle('on',j===i)});
+    bar.style.width=Math.min(100,Math.round(i/total*100))+'%';
+    var inp=steps[i].querySelector('input'); if(inp) inp.focus();
+    f.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function idx(k){for(var i=0;i<steps.length;i++) if(steps[i].dataset.k===k) return i;}
+  function go(i){hist.push(i);show(i);}
+  var started=false;
+  function start(){ if(!started){started=true;track('IniciarFormulario',true);} }
+  f.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var st=b.closest('.step'), i=steps.indexOf(st);
+    if(b.hasAttribute('data-back')){ hist.pop(); show(hist[hist.length-1]||0); return; }
+    if(b.hasAttribute('data-next')){
+      var v=st.querySelector('input').value.trim();
+      if(v.length<2){st.querySelector('.err').textContent='Contame brevemente qué vendés.';return;}
+      st.querySelector('.err').textContent=''; ans[st.dataset.k]=v; start(); go(i+1); return;
+    }
+    if(b.hasAttribute('data-v')){
+      ans[st.dataset.k]=b.dataset.v; start();
+      if(b.hasAttribute('data-out')){ hist.push(idx('no')); show(idx('no')); bar.style.width='100%'; track('NoCalifica',true); return; }
+      go(i+1);
+    }
+  });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var st=steps[idx('datos')], n=f.elements.nombre.value.trim(), t=f.elements.tel.value.trim();
+    if(n.length<2||t.replace(/\D/g,'').length<8){st.querySelector('.err').textContent='Completá tu nombre y un WhatsApp válido.';return;}
+    var msg='Hola Mauricio, completé el formulario del Sistema RITMO y quiero agendar el diagnóstico gratis.'+
+      '\nNombre: '+n+'\nWhatsApp: '+t+'\nRubro: '+ans.rubro+'\nUbicación: '+ans.ubicacion+'\nPrecio promedio: '+ans.precio+
+      '\nPresupuesto: '+ans.presupuesto+'\nAparece en videos: '+ans.camara+'\nAtención por WhatsApp: '+ans.atencion;
+    var url='https://wa.me/'+String(WHATSAPP_NUMBER).replace(/\D/g,'')+'?text='+encodeURIComponent(msg);
+    document.getElementById('qwa').href=url;
+    track('Lead');
+    go(idx('ok')); bar.style.width='100%';
+    window.open(url,'_blank','noopener');
+  });
+})();
+</script>
+
+</body>
+</html>
