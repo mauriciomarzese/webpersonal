@@ -258,7 +258,7 @@ ${extraScript}
   );
 
   /* ---------- menú y footer del resto del sitio ---------- */
-  for (const f of ['index.html', 'publicidad-digital/index.html', 'diseno-web/index.html', 'consultoria/index.html']) {
+  for (const f of ['index.html', 'publicidad-digital/index.html', 'diseno-web/index.html', 'consultoria/index.html', 'empresas/index.html']) {
     const fp = path.join(ROOT, f);
     let t;
     try { t = await fs.readFile(fp, 'utf8'); } catch { continue; }
