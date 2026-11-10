@@ -124,6 +124,7 @@
         <h2>¡Tu negocio califica!</h2>
         <p class="help">Dejame tus datos y agendamos un diagnóstico gratis de 30 minutos.</p>
         <input type="text" name="nombre" placeholder="Tu nombre" autocomplete="name">
+        <input type="text" name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <input type="tel" name="tel" placeholder="Tu WhatsApp (ej.: 383 4123456)" autocomplete="tel" inputmode="tel">
         <p class="err"></p>
         <div class="row"><button class="btn main" type="submit">Quiero mi diagnóstico</button><button class="back" type="button" data-back>Volver</button></div>
@@ -162,6 +163,11 @@
   var f=document.getElementById('quiz'); if(!f) return;
   var steps=[].slice.call(f.querySelectorAll('.step')), bar=document.getElementById('qbar');
   var ans={}, hist=[0], total=7;
+  var q=new URLSearchParams(location.search), origen=['utm_source','utm_campaign','utm_content'].map(function(k){return q.get(k)}).filter(Boolean).join(' / ')||document.referrer||'Directo';
+  function guardar(extra){
+    var d=Object.assign({},ans,extra,{origen:origen});
+    try{ fetch('/api/diagnostico',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d),keepalive:true}); }catch(e){}
+  }
   function track(ev,custom){ try{ if(window.fbq){ custom?fbq('trackCustom',ev):fbq('track',ev); } }catch(e){} }
   function show(i){
     steps.forEach(function(s,j){s.classList.toggle('on',j===i)});
@@ -184,7 +190,7 @@
     }
     if(b.hasAttribute('data-v')){
       ans[st.dataset.k]=b.dataset.v; start();
-      if(b.hasAttribute('data-out')){ hist.push(idx('no')); show(idx('no')); bar.style.width='100%'; track('NoCalifica',true); return; }
+      if(b.hasAttribute('data-out')){ hist.push(idx('no')); show(idx('no')); bar.style.width='100%'; guardar({resultado:'No califica'}); track('NoCalifica',true); return; }
       go(i+1);
     }
   });
@@ -197,6 +203,7 @@
       '\nPresupuesto: '+ans.presupuesto+'\nAparece en videos: '+ans.camara+'\nAtención por WhatsApp: '+ans.atencion;
     var url='https://wa.me/'+String(WHATSAPP_NUMBER).replace(/\D/g,'')+'?text='+encodeURIComponent(msg);
     document.getElementById('qwa').href=url;
+    guardar({resultado:'Califica',nombre:n,tel:t,web:f.elements.web.value});
     track('Lead');
     go(idx('ok')); bar.style.width='100%';
     window.open(url,'_blank','noopener');
