@@ -682,3 +682,11 @@ footer{border-top:1px solid rgba(200,100,59,.35)}
 @media (max-width:900px){.cgrid,.wsgrid{grid-template-columns:1fr}}
 .ccard .cmono{color:#fff;font-size:1rem}
 .wsshot span em{display:block;margin-top:2px;font-style:normal;font-weight:500;font-size:.8rem;color:#5A5F5A;line-height:1.35}
+.serv .sub{margin-top:8px;color:#3A3F3A;max-width:62ch}
+.front{margin:30px 0 12px;font-size:1.05rem;color:var(--blue-deep)}
+.svc4.three{grid-template-columns:repeat(3,1fr)}
+.svc4.one{grid-template-columns:1fr}
+.casos .sub{margin-top:8px;color:#3A3F3A;max-width:62ch}
+.casos .wstrip{margin-top:40px}
+@media (max-width:900px){.svc4.three{grid-template-columns:1fr}}
+.prob .sub{color:#3A3F3A;max-width:62ch}
