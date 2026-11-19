@@ -181,8 +181,8 @@ const grab = (re, what) => {
   return m[0];
 };
 const SPRITE = grab(/<svg width="0" height="0"[\s\S]*?<\/svg>/, 'el sprite SVG');
-const HEADER = grab(/<header class="top">[\s\S]*?<\/header>/, 'el header');
-const FOOTER = grab(/<footer>[\s\S]*?<\/footer>/, 'el footer');
+const HEADER = grab(/<header class="top">[\s\S]*?<\/header>/, 'el header').replace(/<a href="#/g, '<a href="/#');
+const FOOTER = grab(/<footer>[\s\S]*?<\/footer>/, 'el footer').replace(/<a href="#/g, '<a href="/#');
 const FAB = grab(/<a class="fab wa"[\s\S]*?<\/a>/, 'el botón de WhatsApp');
 const WA = '#wa';
 
