@@ -690,3 +690,12 @@ footer{border-top:1px solid rgba(200,100,59,.35)}
 .casos .wstrip{margin-top:40px}
 @media (max-width:900px){.svc4.three{grid-template-columns:1fr}}
 .prob .sub{color:#3A3F3A;max-width:62ch}
+/* Home: menos aire vertical (-50%) */
+#inicio .hero{padding:20px 0 48px}
+#inicio .prob,#inicio .pasos3,#inicio .fit,#inicio .casos,#inicio .serv,#inicio .serv.s-white,#inicio .about{padding:44px 0}
+#inicio .testi,#inicio .final{padding-top:34px;padding-bottom:44px}
+@media (max-width:900px){
+  #inicio .hero{padding:14px 0 36px}
+  #inicio .prob,#inicio .pasos3,#inicio .fit,#inicio .casos,#inicio .serv,#inicio .serv.s-white,#inicio .about{padding:30px 0}
+  #inicio .testi,#inicio .final{padding-top:24px;padding-bottom:30px}
+}
