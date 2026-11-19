@@ -658,3 +658,26 @@ footer{border-top:1px solid rgba(200,100,59,.35)}
 .clogo.sm{width:30px;height:30px;margin:0}
 .cmore{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .cchip{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;background:#F7F3EA;border:1.5px solid #DDD5C2;border-radius:999px;font-weight:600;color:var(--ink);font-size:.9rem}
+.cgrid{grid-template-columns:repeat(2,1fr)}
+.ccard.feat{border-color:var(--blue-deep);background:#fff}
+.cstat{margin-top:10px;padding:14px 16px;background:#171A18;border-radius:6px;display:flex;flex-direction:column;gap:2px}
+.cstat b{font-size:1.8rem;line-height:1.1;color:#A9D38F;font-weight:800;letter-spacing:-.02em}
+.cstat i{font-style:normal;font-size:.88rem;color:#CBD2CB}
+.cmini{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:.9rem;color:#3A3F3A}
+.cmini b{color:var(--ink)}
+.ccard small{margin-top:8px;font-size:.78rem;color:#5A5F5A;line-height:1.4}
+.cmono{width:64px;height:64px;border-radius:50%;background:var(--blue-deep);color:#fff;display:grid;place-items:center;font-weight:800;letter-spacing:.04em;margin-bottom:6px;font-size:1rem}
+.ccard .cmono+strong{margin-top:0}
+.wstrip{margin-top:44px}
+.wstrip h3{font-size:1.15rem;margin-bottom:16px;color:var(--ink)}
+.wsgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.wsgrid>*{min-width:0}
+.wsshot{display:flex;flex-direction:column;border:1.5px solid #DDD5C2;border-radius:6px;overflow:hidden;background:#fff;text-decoration:none;transition:border-color .45s}
+.wsshot:hover{border-color:var(--blue-deep)}
+.wsshot img{display:block;width:100%;height:auto;aspect-ratio:1000/480;object-fit:cover;object-position:top}
+.wsshot span{padding:10px 14px;font-weight:700;font-size:.92rem;color:var(--ink)}
+.wstrip>.go{display:inline-block;margin-top:16px;font-weight:700;font-size:.92rem;color:var(--blue-deep);text-decoration:none}
+.wstrip>.go:hover{color:var(--terra)}
+@media (min-width:981px){.tgrid.two{grid-template-columns:repeat(2,1fr);max-width:780px;margin-inline:auto}}
+@media (max-width:900px){.cgrid,.wsgrid{grid-template-columns:1fr}}
+.ccard .cmono{color:#fff;font-size:1rem}
