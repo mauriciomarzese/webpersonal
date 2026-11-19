@@ -595,3 +595,62 @@ footer{border-top:1px solid rgba(200,100,59,.35)}
 .steps .letter{color:var(--green)}
 @media (max-width:980px){.steps.three,.steps.five{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.steps.three,.steps.five{grid-template-columns:1fr}}
+
+/* ===== Home nueva: problema, servicios, pasos, para quién, casos ===== */
+.hero-note{margin-top:22px;font-size:.92rem;color:#CBD2CB;max-width:34em}
+.btn.ghost{background:transparent;color:#F7F3EA;border-color:rgba(247,243,234,.45)}
+.btn.ghost:hover{border-color:var(--green);color:var(--green)}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.prob,.pasos3,.fit,.casos,.serv{padding:88px 0}
+.prob{background:#F7F3EA}
+.serv.s-white{background:#F0EBDF}
+.pasos3.s-white{background:#F7F3EA}
+.about{background:#F0EBDF}
+.fit.s-white{background:#F7F3EA}
+.casos.s-white{background:#F0EBDF}
+.prob h2,.serv h2,.pasos3 h2,.fit h2,.casos h2{margin:14px 0 0;max-width:20em}
+.plist{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:12px;max-width:46em}
+.plist li{position:relative;padding:16px 18px 16px 44px;background:#fff;border:1.5px solid #DDD5C2;border-radius:6px;color:var(--ink)}
+.plist li::before{content:"";position:absolute;left:18px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--terra)}
+.pclose{margin-top:26px;max-width:40em;font-size:1.1rem;font-weight:600;color:var(--ink)}
+.svc4{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.svc4>*{min-width:0}
+.scard{display:flex;flex-direction:column;gap:10px;padding:26px;background:#F7F3EA;border:1.5px solid #DDD5C2;border-radius:6px;transition:border-color .45s,background .45s}
+.scard:hover{background:#fff;border-color:var(--blue-deep)}
+.scard .qic{width:44px;height:44px;border-radius:4px;background:var(--blue-deep);display:grid;place-items:center;margin-bottom:4px}
+.scard .qic svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.scard h3{font-size:1.2rem;line-height:1.2;color:var(--ink)}
+.scard p{color:#3A3F3A;font-size:.97rem}
+.scard .go{margin-top:auto;padding-top:8px;font-weight:700;font-size:.92rem;color:var(--blue-deep);text-decoration:none;cursor:pointer}
+.scard:hover .go{color:var(--terra)}
+.st3{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+.st3>*{min-width:0}
+.st3 li{padding:24px;background:#fff;border:1.5px solid #DDD5C2;border-radius:6px}
+.st3 .fn{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:4px;background:var(--blue-deep);color:#fff;font-weight:800;margin-bottom:12px}
+.st3 h3{font-size:1.1rem;margin-bottom:6px;color:var(--ink)}
+.st3 p{color:#3A3F3A;font-size:.95rem}
+.fitgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+.fitgrid>*{min-width:0}
+.fitcol{padding:26px;border-radius:6px;border:1.5px solid #DDD5C2;background:#fff}
+.fitcol.yes{border-color:var(--blue-deep)}
+.fitcol h3{font-size:1.15rem;margin-bottom:12px;color:var(--ink)}
+.fitcol ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fitcol li{position:relative;padding-left:26px;color:#3A3F3A;font-size:.97rem}
+.fitcol.yes li::before{content:"✓";position:absolute;left:0;color:var(--blue-deep);font-weight:800}
+.fitcol.no li::before{content:"✕";position:absolute;left:0;color:#8A8F8A;font-weight:800}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.cgrid>*{min-width:0}
+.ccard{padding:24px;background:#F7F3EA;border:1.5px solid #DDD5C2;border-radius:6px;display:flex;flex-direction:column;gap:6px}
+.ccard strong{font-size:1.1rem;color:var(--ink)}
+.ccard span{font-size:.85rem;color:#5A5F5A;font-weight:600}
+.ccard p{margin-top:6px;color:#3A3F3A;font-size:.95rem}
+.cmore{margin-top:20px;color:#5A5F5A;font-size:.95rem}
+.fsteps{list-style:none;counter-reset:f;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:0 auto 28px;padding:0}
+.fsteps li{counter-increment:f;padding:10px 16px;background:#fff;border:1.5px solid #DDD5C2;border-radius:6px;font-size:.92rem;color:var(--ink)}
+.fsteps li::before{content:counter(f) ". ";font-weight:800;color:var(--terra)}
+.fnote{margin:14px auto 0!important;font-size:.9rem!important}
+@media (max-width:900px){
+  .prob,.pasos3,.fit,.casos,.serv{padding:60px 0}
+  .svc4,.fitgrid,.st3,.cgrid{grid-template-columns:1fr}
+  .hero .actions .btn{width:100%}
+}
