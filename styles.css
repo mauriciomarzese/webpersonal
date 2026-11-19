@@ -681,3 +681,4 @@ footer{border-top:1px solid rgba(200,100,59,.35)}
 @media (min-width:981px){.tgrid.two{grid-template-columns:repeat(2,1fr);max-width:780px;margin-inline:auto}}
 @media (max-width:900px){.cgrid,.wsgrid{grid-template-columns:1fr}}
 .ccard .cmono{color:#fff;font-size:1rem}
+.wsshot span em{display:block;margin-top:2px;font-style:normal;font-weight:500;font-size:.8rem;color:#5A5F5A;line-height:1.35}

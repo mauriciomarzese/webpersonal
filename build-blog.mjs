@@ -188,7 +188,6 @@ const WA = '#wa';
 
 function headerFor(current) {
   let h = HEADER.replace(/ aria-current="page"/g, '');
-  if (!h.includes('href="/blog/"')) h = h.replace('</ul>', `<li><a href="/blog/"${current === 'blog' ? ' aria-current="page"' : ''}>Blog</a></li></ul>`);
   return h;
 }
 const footerWithBlog = () => (FOOTER.includes('href="/blog/"') ? FOOTER : FOOTER.replace('</nav>', '<a href="/blog/">Blog</a></nav>'));
@@ -384,7 +383,7 @@ for (const f of ['index.html', 'publicidad-digital/index.html', 'diseno-web/inde
   let t;
   try { t = await fs.readFile(fp, 'utf8'); } catch { continue; }
   if (t.includes('href="/blog/"')) continue;
-  t = t.replace('</ul>\n        <a class="btn green sm wa"', '<li><a href="/blog/">Blog</a></li></ul>\n        <a class="btn green sm wa"').replace('</nav>\n  </div>\n</footer>', '<a href="/blog/">Blog</a></nav>\n  </div>\n</footer>');
+  t = t.replace('</nav>\n  </div>\n</footer>', '<a href="/blog/">Blog</a></nav>\n  </div>\n</footer>');
   await fs.writeFile(fp, t);
 }
 
