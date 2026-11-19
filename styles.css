@@ -654,3 +654,7 @@ footer{border-top:1px solid rgba(200,100,59,.35)}
   .svc4,.fitgrid,.st3,.cgrid{grid-template-columns:1fr}
   .hero .actions .btn{width:100%}
 }
+.clogo{width:64px;height:64px;border-radius:50%;object-fit:cover;background:#fff;border:1.5px solid #DDD5C2;margin-bottom:6px}
+.clogo.sm{width:30px;height:30px;margin:0}
+.cmore{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.cchip{display:inline-flex;align-items:center;gap:8px;padding:4px 12px 4px 4px;background:#F7F3EA;border:1.5px solid #DDD5C2;border-radius:999px;font-weight:600;color:var(--ink);font-size:.9rem}
